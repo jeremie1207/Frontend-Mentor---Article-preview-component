@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <title>Frontend Mentor | Article preview component</title>
+  </head>
+  <body>
+    <main class="grid-container place-items-center min-height-100vh">
+      <article class="component grid-container  gap-2 position-relative">
+        <img
+          src="./images/drawers.jpg"
+          alt="Green dresser against a white brick wall, 
+          decorated with a brown vase holding dried grass 
+          and two framed artworks"
+          class="component__image"
+        />
+        <section class="component__content">
+          <h2 class="component__title margin-block-end-1-5">
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h2>
+          <p class="component__text">
+            Ever been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I’ve got some simple tips to help
+            you make any room feel complete.
+          </p>
+          <section class="component__author flex-container align-items-center justify-content-space-between">
+            <div class="component__author_info flex-container align-items-center gap-1">
+              <img
+                src="./images/avatar-michelle.jpg"
+                alt="Michelle Appleton"
+                class="component__author_image rounded rounded-image"
+              />
+              <div class="component__author_text">
+                <h3 class="component__author_name">Michelle Appleton</h3>
+                <p class="component__author_date">28 Jun 2020</p>
+              </div>
+            </div>
+            <!--only show on mobile-->
+            <button
+              id="share-button" 
+              class="component_button component__share_button grid-container place-items-center rounded" aria-label="Share Article">
+              <img
+                src="./images/icon-share.svg"
+                alt=""
+                aria-hidden="true"
+                class="component__share_icon"
+              />
+          </section>
+        </section>
+
+        <!--component for sharing article-->
+        <article class="component__share flex-container align-items-center justify-content-space-between position-absolute" id="share-article">
+           <div class="component__share_content flex-container align-items-center gap-1">
+              <p class="component__share_text">Share</p>
+            <section class="component__share_icons flex-container align-items-center gap-1">
+              <a href="#" class="component__share_icon_link">
+                <img
+                  src="./images/icon-facebook.svg"
+                  alt="Facebook"
+                  class="component__share_icon"
+                />
+              </a>
+              <a href="#" class="component__share_icon_link">
+                <img
+                  src="./images/icon-twitter.svg"
+                  alt="Twitter"
+                  class="component__share_icon"
+                />
+              </a>
+              <a href="#" class="component__share_icon_link">
+                <img
+                  src="./images/icon-pinterest.svg"
+                  alt="Pinterest"
+                  class="component__share_icon"
+                />
+              </a>
+            </section>
+           </div>
+            
+            <button
+              id="close-share-button-mobile"
+              class="component_button component__close_share_button grid-container place-items-center rounded mobile-only" aria-label="Share Article">
+              <img
+                src="./images/icon-share.svg"
+                alt=""
+                aria-hidden="true"
+                class="component__share_icon"
+              />
+          </article>
+      </article>
+    </main>
+
+    <!--Footer-->
+  
+    <footer class="footer attribution container">
+      <small>
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="https://github.com/jeremie1207">Jeremie Barhabazi</a>.
+        </small>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

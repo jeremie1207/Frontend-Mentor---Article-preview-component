@@ -1,0 +1,285 @@
+:root {
+  --clr-primary-900: hsl(217, 19%, 35%);
+  --clr-primary-500: hsl(214, 17%, 51%);
+  --clr-primary-400: hsl(212, 23%, 69%);
+  --clr-primary-200: hsl(210, 46%, 95%);
+  --clr-neutral-400: hsl(0, 100%, 100%);
+
+  --fs-primary-400: 0.8125rem;
+  --fs-primary-900: 1.25rem;
+
+  --fw-primary-400: 500;
+  --fw-primary-700: 700;
+
+  --ff-primary-400: "Manrope", sans-serif;
+
+  --filter-invert-400: brightness(60%) invert(1);
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*global */
+
+body {
+  background-color: var(--clr-primary-200);
+  font-size: var(--fs-primary-400);
+  font-weight: var(--fw-primary-400);
+  font-family: var(--ff-primary-400);
+  color: var(--clr-primary-500);
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  font-weight: var(--fw-primary-700);
+  color: var(--clr-primary-900);
+}
+
+h2 {
+  font-size: var(--fs-primary-900);
+}
+
+.component {
+  border-radius: 1rem;
+  background-color: var(--clr-neutral-400);
+  overflow: hidden;
+  box-shadow: 5px 5px 15px 5px var(--clr-primary-400);
+  inline-size: 90%;
+  max-inline-size: 45.625rem;
+  margin-block-start: 2rem;
+}
+
+@media (min-width: 38rem) {
+  .component {
+    grid-template-columns: 40% auto;
+    overflow: visible;
+  }
+}
+
+.min-height-100vh {
+  min-height: 100vh;
+}
+
+/* utility */
+
+.flex-container {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+.rounded-image {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.margin-block-end-1-5 {
+  margin-block-end: 1.5rem;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+/*block*/
+
+.component__text {
+  margin-block-end: 2rem;
+}
+
+@media (min-width: 38rem) {
+  .component__text {
+    margin-block-end: 1.5rem;
+  }
+}
+
+.component__author_date {
+  margin-block-start: 0;
+}
+
+.component__content {
+  padding-inline: 2rem;
+  padding-block-end: 1rem;
+}
+
+@media (min-width: 38rem) {
+  .component__content {
+    padding-block: 2rem;
+    padding-inline-start: 0;
+    padding-inline-end: 2rem;
+  }
+}
+
+.component__image {
+  height: 100%;
+}
+
+@media (min-width: 38rem) {
+  .component__image {
+    border-radius: 1rem 0 0 1rem;
+  }
+}
+
+.component_button {
+  height: 2rem;
+  width: 2rem;
+  border: solid 1px transparent;
+}
+
+.component__share_button:hover,
+.component__share_button:focus {
+  filter: var(--filter-invert-400);
+}
+
+.component__close_share_button {
+  filter: var(--filter-invert-400);
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  margin-block-start: 2rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.component__share {
+  background-color: var(--clr-primary-900);
+  color: var(--clr-primary-500);
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  bottom: 0%;
+  inline-size: 100%;
+  display: none;
+}
+
+@media (min-width: 38rem) {
+  .component__share {
+    inline-size: auto;
+    border-radius: 1rem;
+    right: -7.5%;
+    bottom: 32%;
+  }
+
+  .component__share::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0.7rem;
+    border-style: solid;
+    border-color: var(--clr-primary-900) transparent transparent transparent;
+  }
+}
+
+.component__share_text {
+  text-transform: uppercase;
+  line-height: 1.14;
+  letter-spacing: 25%;
+}
+
+@media (min-width: 38rem) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+.show-hidden-flex-container {
+  display: flex;
+}
